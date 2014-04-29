@@ -280,7 +280,7 @@ class Server {
      */
     public function buildAssetUrl($path)
     {
-        return starts_with($path, '//') ? $path : $this->app['url']->asset($path);
+        return starts_with($path, '//') ? $path : $this->app['url']->asset($path,true);
     }
 
 }
