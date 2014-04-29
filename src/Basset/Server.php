@@ -280,13 +280,7 @@ class Server {
      */
     public function buildAssetUrl($path)
     {
-		 if ( !empty( $_SERVER['HTTPS'] ) ) {
-		   //do secure stuff
-			return starts_with($path, '//') ? $path : $this->app['url']->asset($path, true);
-		 }else{
-		   //warn or redirect or whatever
-			return starts_with($path, '//') ? $path : $this->app['url']->asset($path);
-		 }
+        return starts_with($path, '//') ? $path : $this->app['url']->asset($path);
     }
 
 }
